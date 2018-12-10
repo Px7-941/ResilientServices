@@ -34,17 +34,16 @@ namespace ResilientServices.ViewModels
             var photos = await _photosService
                                             .GetPhotos(Priority.Background)
                                             .ConfigureAwait(false);
-
-	        CachePhotos(photos);
+            CachePhotos(photos);
 
             this.IsLoading = false;
 
-	        this.Photos = photos;
+            this.Photos = photos ;
 	    }
 
 	    private void CachePhotos(IList<PhotoDto> photos)
 	    {
-	        foreach (var id in photos?.Take(10).Select(x => x.Id))
+	        foreach (var id in photos.Take(10).Select(x => x.Id))
 	        {
 	            _photosService.GetPhoto(Priority.Speculative, id);
 	        }

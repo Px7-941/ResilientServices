@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<linker>
+  <assembly fullname="ResilientServices.Android"></assembly>
+  <assembly fullname="ResilientServices"></assembly>
+  <assembly fullname="mscorlib"></assembly>
+  <assembly fullname="System.Core"></assembly>
+  <assembly fullname="System.Reactive.Linq"></assembly>
+  <assembly fullname="System.Runtime.Serialization"></assembly>
+  <assembly fullname="Newtonsoft.Json"></assembly>
+  <assembly fullname="Akavache.Sqlite3"></assembly>
+  <assembly fullname="Akavache"></assembly>
+  <assembly fullname="System.Reactive.Linq"></assembly>
+  <assembly fullname="System.Reactive.Interfaces"></assembly>
+  <assembly fullname="ReactiveUI"></assembly>
+  <assembly fullname="System.Xml"></assembly>
+  <assembly fullname="Splat"></assembly>
+  <assembly fullname="Refit"></assembly>
+  <assembly fullname="Polly"></assembly>
+  <assembly fullname="Xamarin.Forms.Core"></assembly>
+  <assembly fullname="Xamarin.Forms.Xaml"></assembly>
+  <assembly fullname="Xamarin.Forms.Platform"></assembly>
+</linker>

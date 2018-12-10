@@ -8,6 +8,7 @@ namespace ResilientServices
         public static void HandleException(Exception exception)
         {
             Debug.WriteLine(exception.Message);
+            Debug.WriteLine(exception.StackTrace);
         }
     }
 }

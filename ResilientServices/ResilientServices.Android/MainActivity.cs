@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
+using Akavache;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace ResilientServices.Droid
 {
@@ -19,8 +17,15 @@ namespace ResilientServices.Droid
 
             base.OnCreate(bundle);
 
+            Forms.SetFlags("FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+        }
+
+        protected override void OnDestroy()
+        {
+            BlobCache.Shutdown().Wait();
+            base.OnDestroy();
         }
     }
 }
