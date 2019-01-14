@@ -11,7 +11,6 @@ namespace ResilientServices.iOS
     {
         static LinkerPreserve()
         {
-            var persistentName = typeof(SQLitePersistentBlobCache).FullName;
             var encryptedName = typeof(SQLiteEncryptedBlobCache).FullName;
         }
     }

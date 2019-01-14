@@ -10,7 +10,7 @@ namespace ResilientServices
         public App()
         {
             InitializeComponent();
-
+            Akavache.Sqlite3.Registrations.Start("ApplicationName", () => SQLitePCL.Batteries_V2.Init());
             MainPage = new MainPage();
         }
 
