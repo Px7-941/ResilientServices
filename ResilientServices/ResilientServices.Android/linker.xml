@@ -8,7 +8,7 @@
   <assembly fullname="System.Runtime.Serialization"></assembly>
   <assembly fullname="Newtonsoft.Json"></assembly>
   <assembly fullname="Akavache.Sqlite3"></assembly>
-  <assembly fullname="Akavache"></assembly>
+  <assembly fullname="Akavache.Core"></assembly>
   <assembly fullname="System.Reactive.Linq"></assembly>
   <assembly fullname="System.Reactive.Interfaces"></assembly>
   <assembly fullname="ReactiveUI"></assembly>
