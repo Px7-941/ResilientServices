@@ -9,6 +9,8 @@
   <assembly fullname="Newtonsoft.Json"></assembly>
   <assembly fullname="Akavache.Sqlite3"></assembly>
   <assembly fullname="Akavache.Core"></assembly>
+  <assembly fullname="SQLitePCLRaw.batteries_v2"></assembly>
+  <assembly fullname="SQLitePCLRaw.core"></assembly>
   <assembly fullname="System.Reactive.Linq"></assembly>
   <assembly fullname="System.Reactive.Interfaces"></assembly>
   <assembly fullname="ReactiveUI"></assembly>

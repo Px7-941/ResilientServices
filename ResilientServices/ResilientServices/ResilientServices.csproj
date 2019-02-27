@@ -8,17 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="akavache.core" Version="6.2.3" />
-    <PackageReference Include="akavache.sqlite3" Version="6.2.3" />
+    <PackageReference Include="akavache.core" Version="6.3.6" />
+    <PackageReference Include="akavache.sqlite3" Version="6.3.6" />
     <PackageReference Include="AsyncErrorHandler.Fody" Version="1.2.3" />
     <PackageReference Include="fusillade_Reactive_4" Version="1.0.0.3" />
-    <PackageReference Include="Polly" Version="6.1.2" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="9.8.1" />
-    <PackageReference Include="Refit" Version="4.6.58" />
-    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.12" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
-    <PackageReference Include="Fody" Version="3.3.5">
+    <PackageReference Include="Polly" Version="7.0.3" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="9.11.1" />
+    <PackageReference Include="Refit" Version="4.6.90" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.13" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
+    <PackageReference Include="Fody" Version="4.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

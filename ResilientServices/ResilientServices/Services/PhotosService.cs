@@ -67,7 +67,7 @@ namespace ResilientServices.Services
                     getPhotosTask = _apiService.UserInitiated.GetPhotos();
                     break;
             }
-            
+
             if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
                 photos = await GetPolicy().ExecuteAsync(() => getPhotosTask);
@@ -104,7 +104,7 @@ namespace ResilientServices.Services
             return conference;
         }
 
-        private Policy GetPolicy()
+        private IAsyncPolicy GetPolicy()
         {
             return Policy
                 .Handle<ApiException>(ExceptionPredicate)
