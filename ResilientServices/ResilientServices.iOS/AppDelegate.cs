@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Net.Http;
 using Foundation;
+using Splat;
 using UIKit;
 
 namespace ResilientServices.iOS
@@ -23,6 +24,7 @@ namespace ResilientServices.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Locator.CurrentMutable.RegisterLazySingleton(() => new NSUrlSessionHandler(), typeof(HttpMessageHandler));
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

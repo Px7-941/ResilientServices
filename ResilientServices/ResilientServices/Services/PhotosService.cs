@@ -5,9 +5,10 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Akavache;
 using Fusillade;
-using Plugin.Connectivity;
 using Polly;
+using Refit;
 using ResilientServices.Dtos;
+using Xamarin.Essentials;
 
 namespace ResilientServices.Services
 {
@@ -31,7 +32,7 @@ namespace ResilientServices.Services
                 });
 
             var photos = await cachedPhotos.FirstOrDefaultAsync();
-            return photos;
+            return photos ?? new List<PhotoDto>();
         }
 
         public async Task<PhotoDto> GetPhoto(Priority priority, int id)
@@ -46,7 +47,6 @@ namespace ResilientServices.Services
 
             return photo;
         }
-
 
         private async Task<List<PhotoDto>> GetRemotePhotosAsync(Priority priority)
         {
@@ -67,17 +67,10 @@ namespace ResilientServices.Services
                     getPhotosTask = _apiService.UserInitiated.GetPhotos();
                     break;
             }
-            
-            if (CrossConnectivity.Current.IsConnected)
+
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                photos = await Policy
-                      .Handle<WebException>()
-                      .WaitAndRetryAsync
-                      (
-                        retryCount: 5,
-                        sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
-                      )
-                      .ExecuteAsync(() => getPhotosTask);
+                photos = await GetPolicy().ExecuteAsync(() => getPhotosTask).ConfigureAwait(false);
             }
             return photos;
         }
@@ -103,16 +96,32 @@ namespace ResilientServices.Services
                     break;
             }
 
-            if (CrossConnectivity.Current.IsConnected)
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                conference = await Policy
-                    .Handle<Exception>()
-                    .RetryAsync(retryCount: 5)
-                    .ExecuteAsync(async () => await getPhotoTask);
+                conference = await GetPolicy().ExecuteAsync(() => getPhotoTask).ConfigureAwait(false);
             }
 
             return conference;
         }
 
+        private IAsyncPolicy GetPolicy()
+        {
+            return Policy
+                .Handle<ApiException>(ExceptionPredicate)
+                .WaitAndRetryAsync(5, SleepDurationProvider);
+        }
+
+        private TimeSpan SleepDurationProvider(int retryAttempt)
+        {
+            return TimeSpan.FromSeconds(Math.Pow(2, retryAttempt));
+        }
+
+        private bool ExceptionPredicate(ApiException ex)
+        {
+            var httpMethod = ex.RequestMessage.Method.Method;
+            var url = ex.RequestMessage.RequestUri.AbsoluteUri;
+            var content = ex.RequestMessage.Content.ReadAsStringAsync().Result;
+            return ex.StatusCode == HttpStatusCode.ServiceUnavailable;
+        }
     }
 }
