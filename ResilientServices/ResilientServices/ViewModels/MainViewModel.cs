@@ -12,7 +12,9 @@ namespace ResilientServices.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+#pragma warning disable 67
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore 67
 
         private readonly IPhotosService _photosService;
 
