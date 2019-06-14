@@ -1,8 +1,11 @@
 ﻿
+using System.Net.Http;
 using Akavache;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Splat;
+using Xamarin.Android.Net;
 using Xamarin.Forms;
 
 namespace ResilientServices.Droid
@@ -19,6 +22,7 @@ namespace ResilientServices.Droid
 
             Forms.SetFlags("FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            Locator.CurrentMutable.RegisterLazySingleton(() => new AndroidClientHandler(), typeof(HttpMessageHandler));
             LoadApplication(new App());
         }
 

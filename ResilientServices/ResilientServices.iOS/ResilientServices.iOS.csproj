@@ -165,19 +165,24 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="akavache.sqlite3" Version="6.2.3" />
-    <PackageReference Include="Polly" Version="6.1.2" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="9.8.1" />
-    <PackageReference Include="Refit" Version="4.6.58" />
-    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.12" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+    <PackageReference Include="akavache.sqlite3" Version="6.5.9" />
+    <PackageReference Include="Polly" Version="7.1.0" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="9.16.9" />
+    <PackageReference Include="Refit" Version="4.7.9" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.14" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.0.0.497661</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\ResilientServices\ResilientServices.csproj">
-      <Project>{3DC196B9-B572-424B-A10B-3DAD3F1F3287}</Project>
+      <Project>{B2AB7208-C7A0-4330-8428-6D3C0A4E7EAC}</Project>
       <Name>ResilientServices</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LinkDescription Include="linker.xml" />
   </ItemGroup>
 </Project>
