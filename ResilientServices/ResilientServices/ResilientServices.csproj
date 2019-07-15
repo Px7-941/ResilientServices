@@ -12,11 +12,11 @@
     <PackageReference Include="akavache.sqlite3" Version="6.5.9" />
     <PackageReference Include="AsyncErrorHandler.Fody" Version="1.2.3" />
     <PackageReference Include="Polly" Version="7.1.0" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="9.16.9" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="9.19.5" />
     <PackageReference Include="Refit" Version="4.7.9" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.14" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
-    <PackageReference Include="Fody" Version="5.0.6">
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Fody" Version="5.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
@@ -24,7 +24,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
     <PackageReference Include="fusillade" Version="2.0.5" />
   </ItemGroup>
 
