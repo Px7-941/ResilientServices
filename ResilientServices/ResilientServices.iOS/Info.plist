@@ -32,22 +32,18 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>ResilientServices</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSExceptionDomains</key>
-      <dict>
-        <key>jsonplaceholder.typicode.com</key>
-        <dict>
-          <!--Include to allow subdomains-->
-          <key>NSIncludesSubdomains</key>
-          <true/>
-          <!--Include to allow insecure HTTP requests-->
-          <key>NSExceptionAllowsInsecureHTTPLoads</key>
-          <true/>
-        </dict>
-      </dict>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>jsonplaceholder.typicode.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

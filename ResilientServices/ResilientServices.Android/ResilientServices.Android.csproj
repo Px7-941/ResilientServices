@@ -25,6 +25,7 @@
     </AndroidLinkSkip>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidSupportedAbis>arm64-v8a</AndroidSupportedAbis>
+    <AndroidUseManagedDesignTimeResourceGenerator>false</AndroidUseManagedDesignTimeResourceGenerator>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

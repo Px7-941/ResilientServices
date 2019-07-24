@@ -1,26 +1,26 @@
-﻿using ResilientServices.Services;
+﻿using System.ComponentModel;
+using ResilientServices.Services;
 using ResilientServices.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ResilientServices.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
-	{
-		private readonly MainViewModel _viewModel;
-		public const string PlaceholderConfApiUrl = "https://jsonplaceholder.typicode.com";
+    {
+        private readonly MainViewModel _viewModel;
+        public const string PlaceholderConfApiUrl = "https://jsonplaceholder.typicode.com";
 
-		public MainPage()
-		{
-			InitializeComponent();
+        public MainPage()
+        {
+            InitializeComponent();
 
-			var apiService = new ApiService(PlaceholderConfApiUrl);
-			var service = new PhotosService(apiService);
+            var apiService = new ApiService(PlaceholderConfApiUrl);
+            var service = new PhotosService(apiService);
 
-			_viewModel = new MainViewModel(service);
-			
-			this.BindingContext = _viewModel;
+            _viewModel = new MainViewModel(service);
+
+            BindingContext = _viewModel;
             _viewModel.GetDataCommand.Execute(null);
         }
     }
